@@ -1,62 +1,42 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:merkado/screens/farmer_screens/farmer_location_screen.dart';
 
 import '../authentication/user/login_screen.dart';
+import '../customer_screens/user_location_screen.dart';
 
-class HomePage extends StatefulWidget {
-  static const routeName = '/farmer-home';
-  const HomePage({super.key});
+class CustomerHomePageScreen extends StatefulWidget {
+  static const routeName = '/home-page';
+  const CustomerHomePageScreen({Key? key}) : super(key: key);
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<CustomerHomePageScreen> createState() => _HomePageScreenState();
 }
 
-class _HomePageState extends State<HomePage> {
-  // Future<void> _farmersLocation() async {
-  //   final farmersProvider =
-  //       Provider.of<FarmersProvider>(context, listen: false);
-  //   final farmers = farmersProvider.currentFarmers;
-
-  //   if (farmers != null) {
-  //     await FirebaseFirestore.instance
-  //         .collection('merchantLocations')
-  //         .doc(farmers.fullName)
-  //         .set({
-  //       'address': farmers.address,
-  //       'merchant': 'Farmer',
-  //       'status': 'onUserMap',
-  //     });
-  //   }
-  //   // ignore: use_build_context_synchronously
-  //   Navigator.pushNamed(context, FarmerLocationScreen.routeName);
-  // }
-
+class _HomePageScreenState extends State<CustomerHomePageScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
-        title: const Text('Farmer Home'),
+        title: const Text('Customer Home'),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text(
-              'Welcome, Farmer!',
+              'Welcome, Customer!',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 20),
             const Text(
-              'Put your farmer screen content here',
+              'Put your customer screen content here',
               style: TextStyle(fontSize: 18),
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, FarmerLocationScreen.routeName);
+                Navigator.pushNamed(context, UserLocationScreen.routeName);
               },
-              child: const Text('Farmer\'s Location'),
+              child: const Text('User\'s Location'),
             ),
             Container(
               margin: const EdgeInsets.only(left: 30),

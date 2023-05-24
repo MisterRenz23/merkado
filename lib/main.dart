@@ -9,10 +9,11 @@ import 'providers/customer_provider.dart';
 import 'providers/farmers_provider.dart';
 import 'providers/organization_provider.dart';
 
-import 'screens/home_screen.dart';
+import 'screens/customer_screens/customer_home_screen.dart';
 import 'screens/splash_screen.dart';
 import 'screens/farmer_screens/farmer_location_screen.dart';
-import 'screens/user_location_screen.dart';
+import 'screens/customer_screens/user_location_screen.dart';
+import 'screens/customer_screens/customer_screen_controller.dart';
 import 'screens/organization_screens/organization_location_screen.dart';
 import 'screens/farmer_screens/farmer_screen_controller.dart';
 import 'screens/organization_screens/organization_homescreen.dart';
@@ -79,8 +80,10 @@ class _MerkadoState extends State<Merkado> {
           RegisterScreen.routeName: (ctx) => const RegisterScreen(),
           LoginScreen.routeName: (ctx) => const LoginScreen(),
           ForgotPasswordScreen.routeName: (ctx) => const ForgotPasswordScreen(),
-          HomePageScreen.routeName: (ctx) => const HomePageScreen(),
+
           UserLocationScreen.routeName: (ctx) => const UserLocationScreen(),
+          CustomerScreenController.routeName: (ctx) =>
+              const CustomerScreenController(),
           //Farmer Side Routes
           FarmerScreenController.routeName: (ctx) =>
               const FarmerScreenController(),

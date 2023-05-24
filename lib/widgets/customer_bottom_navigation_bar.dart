@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class CustomBottomNavBar extends StatelessWidget {
+class CustomerCustomBottomNavBar extends StatelessWidget {
   final Function(int) onTabTapped;
   final int currentIndex;
 
-  const CustomBottomNavBar({
+  const CustomerCustomBottomNavBar({
     super.key,
     required this.onTabTapped,
     required this.currentIndex,
@@ -22,10 +22,6 @@ class CustomBottomNavBar extends StatelessWidget {
         BottomNavigationBarItem(
           icon: Icon(Icons.home_outlined),
           label: 'Home',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.add_box_outlined),
-          label: 'Add Product',
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.message_outlined),
