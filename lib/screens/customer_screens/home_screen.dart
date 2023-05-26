@@ -1,8 +1,6 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import 'marketplace_screen.dart';
-import '../authentication/user/login_screen.dart';
 import 'user_location_screen.dart';
 
 class HomePageScreen extends StatefulWidget {
@@ -45,44 +43,6 @@ class _HomePageScreenState extends State<HomePageScreen> {
                 Navigator.pushNamed(context, MarketplaceScreen.routeName);
               },
               child: const Text('Market Place'),
-            ),
-            Container(
-              margin: const EdgeInsets.only(left: 30),
-              child: IconButton(
-                onPressed: () async {
-                  showDialog(
-                    context: context,
-                    builder: (BuildContext context) {
-                      return AlertDialog(
-                        title: const Text('Logout'),
-                        content: const Text('Are you sure you want to logout?'),
-                        actions: [
-                          TextButton(
-                            child: const Text('Cancel'),
-                            onPressed: () => Navigator.of(context).pop(),
-                          ),
-                          ElevatedButton(
-                            child: const Text('Logout'),
-                            onPressed: () async {
-                              await FirebaseAuth.instance.signOut();
-                              // ignore: use_build_context_synchronously
-                              Navigator.pushNamedAndRemoveUntil(
-                                context,
-                                LoginScreen.routeName,
-                                (route) => false,
-                              );
-                            },
-                          ),
-                        ],
-                      );
-                    },
-                  );
-                },
-                icon: const Icon(
-                  Icons.logout_outlined,
-                  size: 20,
-                ),
-              ),
             ),
           ],
         ),

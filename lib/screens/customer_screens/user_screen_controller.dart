@@ -4,7 +4,8 @@ import '../../widgets/user_bottom_navigation_bar.dart';
 
 //screens
 import 'user_chat_list.dart';
-import 'home_screen.dart';
+import 'marketplace_screen.dart';
+import 'user_settings_screen.dart';
 
 class UserScreenController extends StatefulWidget {
   static const routeName = '/home-page';
@@ -27,9 +28,9 @@ class _UserScreenControllerState extends State<UserScreenController> {
   @override
   Widget build(BuildContext context) {
     final List<Widget> children = [
-      const HomePageScreen(),
+      const MarketplaceScreen(),
       const UserListScreen(),
-      const Center(child: Text('Settings Page')),
+      const UserSettingsScreen(),
     ];
 
     return Scaffold(
